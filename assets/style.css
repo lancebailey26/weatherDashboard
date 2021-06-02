@@ -1,0 +1,53 @@
+body {
+    margin:0px;
+}
+
+header{
+    text-align: center;
+    height: 5%;
+    font-size: 40px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    background: linear-gradient(to left, blue, lightblue);
+    
+}
+#main{
+    width: 75%;
+    display: inline-block;
+    margin:0px;
+}
+#sidebar{
+    text-align: center;
+    margin-left: 5px;
+    width: 24%;
+    padding: 2px;
+    display: inline-block;
+}
+#searchButton{
+    width: 50%;
+    margin-top: 10px;
+}
+ul{
+    list-style-type: none;
+}
+
+#uvi{
+    color:gray;
+}
+
+.low{
+    background-color: green;
+}
+.moderate{
+    background-color: yellow;
+}
+.high{
+    background-color: orange;
+}
+.veryhigh{
+    background-color: red;
+}
+.extreme{
+    background-color: violet;
+}
