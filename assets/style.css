@@ -12,6 +12,9 @@ header{
     background: linear-gradient(to left, blue, lightblue);
     
 }
+#jumbotron{
+    padding:10;px
+}
 #main{
     width: 75%;
     display: inline-block;
@@ -32,22 +35,62 @@ ul{
     list-style-type: none;
 }
 
-#uvi{
-    color:gray;
-}
-
 .low{
     background-color: green;
+    color:white;
+    padding-top: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    border-radius: 10px;
+
 }
 .moderate{
     background-color: yellow;
+    color:black;
+    padding-top: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    border-radius: 10px;
 }
 .high{
     background-color: orange;
+    color:black;
+    padding-top: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    border-radius: 10px;
 }
 .veryhigh{
     background-color: red;
+    color:black;
+    padding-top: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    border-radius: 10px;
 }
 .extreme{
     background-color: violet;
+    color:black;
+    padding-top: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    border-radius: 10px;
 }
+@media screen and (max-width: 992px) {
+    header{
+        font-size: 20px;
+    }
+    #sidebar{
+        width: 100%;
+    }
+    #main{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
