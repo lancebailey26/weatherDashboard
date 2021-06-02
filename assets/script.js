@@ -15,6 +15,7 @@ var recent = [];
 
 function clear(){
     $('p').text('');
+    $('h1').text('');
 }
 
 $('#searchButton').on('click', function(){
@@ -28,12 +29,14 @@ $('#searchButton').on('click', function(){
         })
         .then(function (data) {
             console.log(data);
+            var city = data.name;
             var temperature = data.main.temp 
             var wind = data.wind.speed
             var humidity = data.main.humidity
             var lat = data.coord.lat
             var lon = data.coord.lon
             // for (var i = 0; i>data.length; i++)
+            $('h1').append(city);
             $('p').append("Temperature: " + temperature + "°");
             $('p').append("<br>")
             $('p').append("Wind: " + wind + "MPH");
@@ -48,7 +51,7 @@ $('#searchButton').on('click', function(){
               .then (function (data2){
                   console.log(data2);
                   var uvi = data2.current.uvi;
-                $('p').append("UVI: " + "<span id=uvi>"+uvi+"</span>")
+                $('p').append("UV Index: " + "<span id=uvi>"+uvi+"</span>")
             
                 if (uvi <=2){
                 $('#uvi').addClass("low")
