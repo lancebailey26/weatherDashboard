@@ -26,14 +26,14 @@ function displayRecent(){
     for (var i = 0; i < recent.length; i++){
         
         var recentCity = recent[i];
-        var recentCityBubble = document.createElement('div');
+        var recentCityBubble = document.createElement('button');
         var cityName = document.createElement('span');
-        // var cityID = document.querySelector('span');
+        var cityID = document.querySelector('span');
         // var cityAPI = 'https://api.openweathermap.org/data/2.5/weather?q='+recentCity+'&units=imperial&appid=b0b277f6143cf88547073bfccc66624a'
         
         
         recentCityBubble.classList = 'list-item';
-        // cityID.setAttribute('id','cityID');
+        // cityID.id = "citySpan"
         cityName.textContent = recentCity;
         recentCityBubble.appendChild(cityName);
         recentContainer.appendChild(recentCityBubble);
@@ -100,9 +100,10 @@ function getAPI(){
 }
 
 function sidebarAPI(){
-    var theCity = document.getElementById
-    var recentCity = 
-    fetch('https://api.openweathermap.org/data/2.5/weather?q='+recentCity+'&units=imperial&appid=b0b277f6143cf88547073bfccc66624a')
+    clear();
+    displayRecent();
+    var theCity = this.textContent
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='+theCity+'&units=imperial&appid=b0b277f6143cf88547073bfccc66624a')
     .then(function (response){
         return response.json();
     })
