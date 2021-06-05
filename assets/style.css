@@ -13,12 +13,12 @@ header{
     
 }
 #jumbotron{
-    padding:10;px
+    padding:10px;
 }
 #main{
-    width: 75%;
+    width: 75;
     display: inline-block;
-    margin:0px;
+    margin: 0px;
 }
 #sidebar{
     text-align: center;
@@ -103,7 +103,7 @@ li{
     background-color: gray;
     color: white;
     text-decoration: none;
-    text-align: center;;
+    text-align: center;
     display: block;
   }
 @media screen and (max-width: 992px) {
