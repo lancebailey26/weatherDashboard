@@ -2,6 +2,7 @@ var recent = [];
 var recentContainer = document.getElementById('recent')
 var searchField = $('#searchField').val();
 var date = moment().format("L")
+var jumbo = document.getElementById('jumbotron')
 
 
 // function getApi(){
@@ -172,7 +173,17 @@ function getAPI() {
 
                 //img
 
-                // var fiveCode = data2.daily[1].weather[1].icon;
+                var fiveCode1 = data2.daily[1].weather[0].icon;
+                var fiveCode2 = data2.daily[2].weather[0].icon;
+                var fiveCode3 = data2.daily[3].weather[0].icon;
+                var fiveCode4 = data2.daily[4].weather[0].icon;
+                var fiveCode5 = data2.daily[5].weather[0].icon;
+                var fiveImage1 = "http://openweathermap.org/img/wn/"+fiveCode1+"@2x.png"
+                var fiveImage2 = "http://openweathermap.org/img/wn/"+fiveCode2+"@2x.png"
+                var fiveImage3 = "http://openweathermap.org/img/wn/"+fiveCode3+"@2x.png"
+                var fiveImage4 = "http://openweathermap.org/img/wn/"+fiveCode4+"@2x.png"
+                var fiveImage5 = "http://openweathermap.org/img/wn/"+fiveCode5+"@2x.png"
+
                 // var fiveCodeURL = "http://openweathermap.org/img/wn/"+fiveCode+"@2x.png"
                 var cardContainer = document.getElementById('cardContainer')
                 var card1 = document.createElement('div')
@@ -191,28 +202,33 @@ function getAPI() {
                 
 
                 $('.t1').append(fiveDate1);
-                $('.p1').append("Temp: " +fiveTemp1 + "<br>" + "Wind: " + fiveWind1 + "<br>" + "Humidity: " + fiveHumid1)
-                cardContainer.appendChild(card1);
+                $('.img1').attr('src',fiveImage1);
+                $('.p1').append("Temp: " +fiveTemp1+ "°" + "<br>" + "Wind: " + fiveWind1+"MPH"  + "<br>" + "Humidity: " + fiveHumid1 +" %")
+                jumbo.appendChild(card1);
                 
             
                 $('.t2').append(fiveDate2);
-                $('.p2').append("Temp: " +fiveTemp2 + "<br>" + "Wind: " + fiveWind2 + "<br>" + "Humidity: " + fiveHumid2)
-                cardContainer.appendChild(card2);
+                $('.img2').attr('src',fiveImage2);
+                $('.p2').append("Temp: " +fiveTemp2 + "°"+ "<br>" + "Wind: " + fiveWind2+"MPH"  + "<br>" + "Humidity: " + fiveHumid2 +" %")
+                jumbo.appendChild(card2);
                 
                 
                 $('.t3').append(fiveDate3);
-                $('.p3').append("Temp: " +fiveTemp3 + "<br>" + "Wind: " + fiveWind3 + "<br>" + "Humidity: " + fiveHumid3)
-                cardContainer.appendChild(card3);
+                $('.img3').attr('src',fiveImage3);
+                $('.p3').append("Temp: " +fiveTemp3 + "°"+ "<br>" + "Wind: " + fiveWind3+"MPH"  + "<br>" + "Humidity: " + fiveHumid3 +" %")
+                jumbo.appendChild(card3);
                 
                 
                 $('.t4').append(fiveDate4);
-                $('.p4').append("Temp: " +fiveTemp4 + "<br>" + "Wind: " + fiveWind4 + "<br>" + "Humidity: " + fiveHumid4)
-                cardContainer.appendChild(card4);
+                $('.img4').attr('src',fiveImage4);
+                $('.p4').append("Temp: " +fiveTemp4 + "°"+ "<br>" + "Wind: " + fiveWind4+"MPH"  + "<br>" + "Humidity: " + fiveHumid4 +" %")
+                jumbo.appendChild(card4);
                 
                 
                 $('.t5').append(fiveDate5);
-                $('.p5').append("Temp: " +fiveTemp5 + "<br>" + "Wind: " + fiveWind5 + "<br>" + "Humidity: " + fiveHumid5)
-                cardContainer.appendChild(card5);
+                $('.img5').attr('src',fiveImage5);
+                $('.p5').append("Temp: " +fiveTemp5 + "°"+ "<br>" + "Wind: " + fiveWind5+"MPH"  + "<br>" + "Humidity: " + fiveHumid5 +" %")
+                jumbo.appendChild(card5);
                 $('.card').removeClass('hide');
                 
                 
@@ -391,6 +407,16 @@ function sidebarAPI() {
                 var fiveHumid5 = data2.daily[5].humidity;
 
                 //img
+                var fiveCode1 = data2.daily[1].weather[0].icon;
+                var fiveCode2 = data2.daily[2].weather[0].icon;
+                var fiveCode3 = data2.daily[3].weather[0].icon;
+                var fiveCode4 = data2.daily[4].weather[0].icon;
+                var fiveCode5 = data2.daily[5].weather[0].icon;
+                var fiveImage1 = "http://openweathermap.org/img/wn/"+fiveCode1+"@2x.png"
+                var fiveImage2 = "http://openweathermap.org/img/wn/"+fiveCode2+"@2x.png"
+                var fiveImage3 = "http://openweathermap.org/img/wn/"+fiveCode3+"@2x.png"
+                var fiveImage4 = "http://openweathermap.org/img/wn/"+fiveCode4+"@2x.png"
+                var fiveImage5 = "http://openweathermap.org/img/wn/"+fiveCode5+"@2x.png"
 
                 // var fiveCode = data2.daily[1].weather[1].icon;
                 // var fiveCodeURL = "http://openweathermap.org/img/wn/"+fiveCode+"@2x.png"
@@ -411,28 +437,33 @@ function sidebarAPI() {
                 
 
                 $('.t1').append(fiveDate1);
-                $('.p1').append("Temp: " +fiveTemp1 + "<br>" + "Wind: " + fiveWind1 + "<br>" + "Humidity: " + fiveHumid1)
-                cardContainer.appendChild(card1);
+                $('.img1').attr('src',fiveImage1);
+                $('.p1').append("Temp: " +fiveTemp1+ "°" + "<br>" + "Wind: " + fiveWind1+"MPH"  + "<br>" + "Humidity: " + fiveHumid1 +" %")
+                jumbo.appendChild(card1);
                 
             
                 $('.t2').append(fiveDate2);
-                $('.p2').append("Temp: " +fiveTemp2 + "<br>" + "Wind: " + fiveWind2 + "<br>" + "Humidity: " + fiveHumid2)
-                cardContainer.appendChild(card2);
+                $('.img2').attr('src',fiveImage2);
+                $('.p2').append("Temp: " +fiveTemp2 + "°"+ "<br>" + "Wind: " + fiveWind2+"MPH"  + "<br>" + "Humidity: " + fiveHumid2 +" %")
+                jumbo.appendChild(card2);
                 
                 
                 $('.t3').append(fiveDate3);
-                $('.p3').append("Temp: " +fiveTemp3 + "<br>" + "Wind: " + fiveWind3 + "<br>" + "Humidity: " + fiveHumid3)
-                cardContainer.appendChild(card3);
+                $('.img3').attr('src',fiveImage3);
+                $('.p3').append("Temp: " +fiveTemp3 + "°"+ "<br>" + "Wind: " + fiveWind3+"MPH"  + "<br>" + "Humidity: " + fiveHumid3 +" %")
+                jumbo.appendChild(card3);
                 
                 
                 $('.t4').append(fiveDate4);
-                $('.p4').append("Temp: " +fiveTemp4 + "<br>" + "Wind: " + fiveWind4 + "<br>" + "Humidity: " + fiveHumid4)
-                cardContainer.appendChild(card4);
+                $('.img4').attr('src',fiveImage4);
+                $('.p4').append("Temp: " +fiveTemp4 + "°"+ "<br>" + "Wind: " + fiveWind4+"MPH"  + "<br>" + "Humidity: " + fiveHumid4 +" %")
+                jumbo.appendChild(card4);
                 
                 
                 $('.t5').append(fiveDate5);
-                $('.p5').append("Temp: " +fiveTemp5 + "<br>" + "Wind: " + fiveWind5 + "<br>" + "Humidity: " + fiveHumid5)
-                cardContainer.appendChild(card5);
+                $('.img5').attr('src',fiveImage5);
+                $('.p5').append("Temp: " +fiveTemp5 + "°"+ "<br>" + "Wind: " + fiveWind5+"MPH"  + "<br>" + "Humidity: " + fiveHumid5 +" %")
+                jumbo.appendChild(card5);
                 $('.card').removeClass('hide');
                 
                 

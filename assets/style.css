@@ -13,7 +13,9 @@ header{
     
 }
 #jumbotron{
-    /* padding:10;px */
+    display:inline-block;
+    width:75%;
+
 }
 #main{
     width: 75%;
@@ -23,9 +25,12 @@ header{
 #sidebar{
     text-align: center;
     margin-left: 5px;
-    width: 24%;
+    width: 23%;
     padding: 2px;
     display: inline-block;
+}
+#cardContainer{
+    display:inline-block;
 }
 #searchButton{
     width: 50%;
@@ -41,6 +46,10 @@ span{
 }
 ul{
     list-style-type: none;
+}
+
+#h5{
+    text-align: center;
 }
 
 .low{
@@ -119,10 +128,31 @@ li{
     header{
         font-size: 20px;
     }
-    #sidebar{
+    #jumbotron{
         width: 100%;
+    }
+    #sidebar{
+        width:100%
     }
     #main{
         width: 100%;
+    }
+}
+
+@media screen and (min-width: 993px) {
+    header{
+        font-size: 40px;
+    }
+    #jumbotron{
+        width: 74%;
+    }
+    #sidebar{
+        width:24%
+    }
+    #main{
+        width: 100%;
+    }
+    #cardContainer{
+        margin-left: ;
     }
 }
