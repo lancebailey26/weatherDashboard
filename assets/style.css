@@ -31,6 +31,10 @@ header{
     width: 50%;
     margin-top: 10px;
 }
+.card{
+    width:10rem;
+    display:inline-block;
+}
 span{
     font-size: 1.25rem;
     font-weight: bold;;
@@ -106,6 +110,11 @@ li{
     text-align: center;;
     display: block;
   }
+
+.hide{
+    display: none;
+}
+
 @media screen and (max-width: 992px) {
     header{
         font-size: 20px;
