@@ -134,7 +134,8 @@ li{
         width: 100%;
     }
     #sidebar{
-        width:100%
+        width:100%;
+        position:relative;
     }
     #main{
         width: 100%;

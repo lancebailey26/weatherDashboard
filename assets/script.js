@@ -1,10 +1,11 @@
-var recent = [];
+var recent = []; //localstorage array
 var recentContainer = document.getElementById('recent')
 var searchField = $('#searchField').val();
 var date = moment().format("L")
 var jumbo = document.getElementById('jumbotron')
+var apiKey = "&appid=b0b277f6143cf88547073bfccc66624a" //api key so i dont have to keep copying + pasting
 
-function clear() {
+function clear() { //clears input fields/text on page
     $(".lead").text('');
     $('h1').text('');
     $('.list-item').remove();
@@ -13,7 +14,7 @@ function clear() {
 
 }
 
-function displayRecent() {
+function displayRecent() { //pushes bubbles of previous cities
 
 
 
@@ -21,7 +22,6 @@ function displayRecent() {
 
         var recentCity = recent[i];
         var listEl = document.createElement('ul');
-        var list = document.createElement('li');
         var recentCityBubble = document.createElement('button');
         var cityName = document.createElement('span');
         recentCityBubble.classList = 'list-item';
@@ -36,7 +36,7 @@ function displayRecent() {
 }
 
 
-function getAPI() {
+function getAPI() { //calls api, displays weather
     clear();
     var input = $('#searchField').val();
     if (input == "" || input == " ") {
@@ -47,19 +47,20 @@ function getAPI() {
     recent.push(input)
     localStorage.setItem("recent searches", JSON.stringify(recent));
 
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + input + '&units=imperial&appid=b0b277f6143cf88547073bfccc66624a')
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + input + '&units=imperial' + apiKey)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
             console.log(data);
+            //dig thru the response data and find what i need to display
             var city = data.name;
             var temperature = data.main.temp
             var wind = data.wind.speed
             var humidity = data.main.humidity
-            var lat = data.coord.lat
+            var lat = data.coord.lat //need lat + long for next api call (uvi)
             var lon = data.coord.lon
-            
+            //append info to page
             $('h1').append(city + " - " + date);
             $('.lead').append("<p>Temperature: " + temperature + "°");
             $('.lead').append("<br>")
@@ -68,7 +69,7 @@ function getAPI() {
             $('.lead').append("<p>Humidity: " + humidity + "%")
             $('.lead').append("<br>")
              
-            fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=alerts,minutely,hourly&units=imperial&appid=b0b277f6143cf88547073bfccc66624a')
+            fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=alerts,minutely,hourly&units=imperial'+ apiKey)
                 .then(function (response) {
                     return response.json();
                 })
@@ -92,6 +93,7 @@ function getAPI() {
                     if (uvi >= 11) {
                         $('#uvi').addClass("extreme")
                     }
+                    //here starts the 5 day forecast data
 
                     //date comes as unix
                     var unixDate1 = data2.daily[1].dt;
@@ -139,7 +141,7 @@ function getAPI() {
                     var fiveImage3 = "http://openweathermap.org/img/wn/" + fiveCode3 + "@2x.png"
                     var fiveImage4 = "http://openweathermap.org/img/wn/" + fiveCode4 + "@2x.png"
                     var fiveImage5 = "http://openweathermap.org/img/wn/" + fiveCode5 + "@2x.png"
-
+                    //cards for 5 day
                     var card1 = document.createElement('div')
                     var card2 = document.createElement('div')
                     var card3 = document.createElement('div')
@@ -151,7 +153,7 @@ function getAPI() {
                     card3.classList = "card";
                     card4.classList = "card";
                     card5.classList = "card";
-
+                    //giving cards text + appending them
                     $('.t1').append(fiveDate1);
                     $('.img1').attr('src', fiveImage1);
                     $('.p1').append("Temp: " + fiveTemp1 + "°" + "<br>" + "Wind: " + fiveWind1 + "MPH" + "<br>" + "Humidity: " + fiveHumid1 + " %")
@@ -184,11 +186,11 @@ function getAPI() {
 
 }
 
-function sidebarAPI() {
+function sidebarAPI() { //basically the same but ran from recent search buttons
     clear();
     displayRecent();
     var theCity = this.textContent;
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + theCity + '&units=imperial&appid=b0b277f6143cf88547073bfccc66624a')
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + theCity + '&units=imperial' + apiKey)
         .then(function (response) {
             return response.json();
         })
@@ -209,7 +211,7 @@ function sidebarAPI() {
             $('.lead').append("<p>Humidity: " + humidity + "%")
             $('.lead').append("<br>")
             
-            fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=alerts,minutely,hourly&units=imperial&appid=b0b277f6143cf88547073bfccc66624a')
+            fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=alerts,minutely,hourly&units=imperial'+apiKey)
                 .then(function (response) {
                     return response.json();
                 })
