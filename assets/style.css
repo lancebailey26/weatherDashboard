@@ -15,6 +15,7 @@ header{
 #jumbotron{
     display:inline-block;
     width:75%;
+    float:right;
 
 }
 #main{
@@ -28,6 +29,7 @@ header{
     width: 23%;
     padding: 2px;
     display: inline-block;
+    position: fixed;
 }
 #cardContainer{
     display:inline-block;
