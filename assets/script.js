@@ -3,6 +3,8 @@ var recentContainer = document.getElementById('recent')
 var searchField = $('#searchField').val();
 var date = moment().format("L")
 var jumbo = document.getElementById('jumbotron')
+
+// var citycheck = JSON.parse(localStorage.searches);
 var apiKey = "&appid=b0b277f6143cf88547073bfccc66624a" //api key so i dont have to keep copying + pasting
 
 function clear() { //clears input fields/text on page
@@ -23,9 +25,9 @@ function displayRecent() { //pushes bubbles of previous cities
         var recentCity = recent[i];
         var listEl = document.createElement('ul');
         var recentCityBubble = document.createElement('button');
-        var cityName = document.createElement('span');
+        var cityName = document.createElement('li');
         recentCityBubble.classList = 'list-item';
-        cityName.setAttribute("id", "thecityname")
+        cityName.setAttribute("class", "thecityname")
 
         cityName.textContent = recentCity;
         recentCityBubble.appendChild(cityName);
@@ -37,15 +39,21 @@ function displayRecent() { //pushes bubbles of previous cities
 
 
 function getAPI() { //calls api, displays weather
-    clear();
     var input = $('#searchField').val();
+
+
+
     if (input == "" || input == " ") {
         alert("Please enter a location!")
         return
     }
 
     recent.push(input)
-    localStorage.setItem("recent searches", JSON.stringify(recent));
+    localStorage.setItem("searches", recent);
+
+
+
+    clear();
 
     fetch('https://api.openweathermap.org/data/2.5/weather?q=' + input + '&units=imperial' + apiKey)
         .then(function (response) {
@@ -68,8 +76,8 @@ function getAPI() { //calls api, displays weather
             $('.lead').append("<br>")
             $('.lead').append("<p>Humidity: " + humidity + "%")
             $('.lead').append("<br>")
-             
-            fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=alerts,minutely,hourly&units=imperial'+ apiKey)
+
+            fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=alerts,minutely,hourly&units=imperial' + apiKey)
                 .then(function (response) {
                     return response.json();
                 })
@@ -202,7 +210,7 @@ function sidebarAPI() { //basically the same but ran from recent search buttons
             var humidity = data.main.humidity
             var lat = data.coord.lat
             var lon = data.coord.lon
-           
+
             $('h1').append(city + " - " + date);
             $('.lead').append("<p>Temperature: " + temperature + "°");
             $('.lead').append("<br>")
@@ -210,8 +218,8 @@ function sidebarAPI() { //basically the same but ran from recent search buttons
             $('.lead').append("<br>")
             $('.lead').append("<p>Humidity: " + humidity + "%")
             $('.lead').append("<br>")
-            
-            fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=alerts,minutely,hourly&units=imperial'+apiKey)
+
+            fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=alerts,minutely,hourly&units=imperial' + apiKey)
                 .then(function (response) {
                     return response.json();
                 })

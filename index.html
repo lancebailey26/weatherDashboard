@@ -4,87 +4,95 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Weather Dashboard</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="./assets/style.css">
-    </head>
-    <body>
-        
-        <header> weather dashboard </header>
-       
-     
-        </div>
-          <div id="sidebar">
-              <h2>search for a city:</h2>
-              <div class="input-group input-group-lg">
-            <div class="input-group-prepend">     
-            </div>
-            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="enter a city or zipcode" id="searchField">
-          </div>
-          <div id="btn">
-          <button type="button" class="btn btn-primary btn-lg" id="searchButton">Search</button>
-        <div id="recent" class="list-group"></div>
-        </div>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Weather Dashboard</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+
+  <header> weather dashboard </header>
+
+
+  </div>
+  <div id="sidebar">
+    <h2>search for a city:</h2>
+    <div class="input-group input-group-lg">
+      <div class="input-group-prepend">
       </div>
-      <div class="jumbotron jumbotron-fluid" id= "jumbotron">
-        <div class="container">
-          <h1 class="display-4"></h1>
-          <p class="lead"></p>
-        </div>
-        <!-- </div> -->
-        <!-- <section id="main"> -->
-            
-              <!-- <div id="cardContainer"> -->
-              <div class="card hide">
-                <div class="card-body">
-                  <h5 class="card-title t1"></h5>
-                  <img class="img1"></img>
-                  <p class="card-text p1"></p>
-                </div>
-              </div>
-              <div class="card hide">
-                <div class="card-body">
-                  <h5 class="card-title t2"></h5>
-                  <img class="img2"></img>
-                  <p class="card-text p2"></p>
-                </div>
-              </div>
-              <div class="card hide">
-                <div class="card-body">
-                  <h5 class="card-title t3"></h5>
-                  <img class="img3"></img>
-                  <p class="card-text p3"></p>
-                </div>
-              </div>
-              <div class="card hide">
-                <div class="card-body">
-                  <h5 class="card-title t4"></h5>
-                  <img class="img4"></img>
-                  <p class="card-text p4"></p>
-                </div>
-              </div>
-              <div class="card hide">
-                <div class="card-body">
-                  <h5 class="card-title t5"></h5>
-                  <img class="img5"></img>
-                  <p class="card-text p5"></p>
-                </div>
-              </div>
-            </div>
-          </div>
-    </body>
-        <!--[if lt IE 7]>
+      <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
+        placeholder="enter a city" id="searchField">
+    </div>
+    <div id="btn">
+      <button type="button" class="btn btn-primary btn-lg" id="searchButton">Search</button>
+      <div id="recent" class="list-group"></div>
+    </div>
+  </div>
+  <div class="jumbotron jumbotron-fluid" id="jumbotron">
+    <div class="container">
+      <h1 class="display-4"></h1>
+      <p class="lead"></p>
+    </div>
+    <!-- </div> -->
+    <!-- <section id="main"> -->
+
+    <!-- <div id="cardContainer"> -->
+    <div class="card hide">
+      <div class="card-body">
+        <h5 class="card-title t1"></h5>
+        <img class="img1"></img>
+        <p class="card-text p1"></p>
+      </div>
+    </div>
+    <div class="card hide">
+      <div class="card-body">
+        <h5 class="card-title t2"></h5>
+        <img class="img2"></img>
+        <p class="card-text p2"></p>
+      </div>
+    </div>
+    <div class="card hide">
+      <div class="card-body">
+        <h5 class="card-title t3"></h5>
+        <img class="img3"></img>
+        <p class="card-text p3"></p>
+      </div>
+    </div>
+    <div class="card hide">
+      <div class="card-body">
+        <h5 class="card-title t4"></h5>
+        <img class="img4"></img>
+        <p class="card-text p4"></p>
+      </div>
+    </div>
+    <div class="card hide">
+      <div class="card-body">
+        <h5 class="card-title t5"></h5>
+        <img class="img5"></img>
+        <p class="card-text p5"></p>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+<!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="./assets/script.js" async defer></script>
-    </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="./assets/script.js" async defer></script>
+</body>
+
 </html>
